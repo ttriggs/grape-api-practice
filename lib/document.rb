@@ -16,7 +16,7 @@ class Document
     end
   end
 
-  def import_records_to_redis
+  def import_records_to_db
     records.each do |record|
       import_record(record)
     end
