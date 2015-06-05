@@ -23,8 +23,22 @@ describe "Import Support" do
 
   context "#display_dob" do
     it "reformat date from yyyymmdd to m/d/yyyy" do
-      response = dummy_class.new.display_dob("20110203")
+      date = "20110203"
+      response = dummy_class.new.display_dob(date)
       expect(response).to eq("2/3/2011")
+    end
+  end
+
+  context "#parse_record" do
+    it "creates array from record string" do
+      record = "Triggs, Tyler, male, red, 19861216"
+      response = dummy_class.new.parse_record(record)
+      expect(response.length).to eq(5)
+      expect(response[0]).to eq("Triggs")
+      expect(response[1]).to eq("Tyler")
+      expect(response[2]).to eq("male")
+      expect(response[3]).to eq("red")
+      expect(response[4]).to eq("19861216")
     end
   end
 end
