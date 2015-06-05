@@ -1,2 +1,4 @@
+Albert, Steve, male, red, 19830319
 Stevens, Steve, male, red, 19830310
-Lee, Julia, female, blue, 19840610
+Lee, Julia, female, blue, 19840619
+Apple, Julia, female, blue, 19840610
