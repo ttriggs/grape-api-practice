@@ -1,5 +1,7 @@
 require_relative 'import_support'
 require_relative 'redis_client'
+require 'date'
+require 'json'
 
 class Document
   include ImportSupport
