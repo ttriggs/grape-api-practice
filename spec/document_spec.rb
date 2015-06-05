@@ -22,4 +22,22 @@ describe "Document class" do
     end
   end
 
+  context ".get_delimiter" do
+    it "returns ',' when passed a comma seperated string" do
+      response = Document.get_delimiter("lastname, firstname")
+      expect(response).to eq(",")
+    end
+
+    it "returns '|' when passed a pipe seperated string" do
+      response = Document.get_delimiter("lastname | firstname")
+      expect(response).to eq("|")
+    end
+
+    it "returns ' ' when passed a space seperated string" do
+      response = Document.get_delimiter("lastname firstname")
+      expect(response).to eq(" ")
+    end
+  end
+
+
 end
