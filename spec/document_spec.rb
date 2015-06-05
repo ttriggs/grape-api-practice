@@ -39,5 +39,12 @@ describe "Document class" do
     end
   end
 
+  context "#first_line" do
+    it "returns first line of file" do
+      response = Document.new(pipe_file).first_line
+      expect(response).to eq("Zachary | Albert | male | red | 19900521")
+    end
+  end
+
 
 end
