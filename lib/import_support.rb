@@ -8,4 +8,8 @@ module ImportSupport
       " "
     end
   end
+
+  def display_dob(dob)
+    Date.parse(dob).strftime("%-m/%-d/%Y")
+  end
 end
