@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe "Import Support" do
   let(:dummy_class) { Class.new { include ImportSupport } }
 
