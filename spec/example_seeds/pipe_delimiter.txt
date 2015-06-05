@@ -1,0 +1,2 @@
+Zachary | Albert | male | red | 19900521
+Hernandez | Sophia | female | blue | 19900421
