@@ -1,5 +1,5 @@
 module ImportSupport
-  def get_delimiter(record)
+  def delimiter(record)
     if record.include?("|")
       "|"
     elsif record.include?(",")
