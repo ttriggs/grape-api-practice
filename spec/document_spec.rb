@@ -14,10 +14,10 @@ describe "Document class" do
     end
   end
 
-  context "#import_records_to_redis" do
+  context "#import_records_to_db" do
     it "adds all new records to redis db" do
       expected_records = File.foreach(pipe_file.file).count
-      pipe_file.import_records_to_redis
+      pipe_file.import_records_to_db
       total_records = redis.smembers("records").count
 
       expect(total_records).to eq(expected_records)
