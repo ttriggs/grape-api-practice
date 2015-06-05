@@ -14,4 +14,23 @@ module RedisClient
       array << JSON.parse(record)
     end
   end
+
+  def sort_by_dob
+    records_from_db.sort_by { |hash| hash["dob"] }
+  end
+
+  def sort_by_last_name(records = records_from_db)
+    records.sort_by { |hash| hash["last_name"] }.reverse
+  end
+
+  def sort_by_gender
+    females = sort_by_last_name(records_select_by("gender", "female"))
+    males = sort_by_last_name(records_select_by("gender", "male"))
+    # reverse for last names in ascending order
+    females.reverse + males.reverse
+  end
+
+  def records_select_by(key, value)
+    records_from_db.select { |hash| hash[key] == value}
+  end
 end
