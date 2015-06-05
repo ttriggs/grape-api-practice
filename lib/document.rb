@@ -2,17 +2,15 @@ require_relative 'import_support'
 
 class Document
   include ImportSupport
-  attr_reader :delimiter
+  attr_reader :file
 
   def initialize(file)
     @file = file
   end
 
-  def delimiter
-    @delimiter ||= get_delimiter(first_line)
-  end
-
-  def first_line
-    File.open(@file, &:readline).strip
+  def records
+    File.readlines(@file).each_with_object([]) do |line, records|
+      records << parse_record(line)
+    end
   end
 end
