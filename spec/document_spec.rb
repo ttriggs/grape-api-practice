@@ -22,29 +22,10 @@ describe "Document class" do
     end
   end
 
-  context ".get_delimiter" do
-    it "returns ',' when passed a comma seperated string" do
-      response = Document.get_delimiter("lastname, firstname")
-      expect(response).to eq(",")
-    end
-
-    it "returns '|' when passed a pipe seperated string" do
-      response = Document.get_delimiter("lastname | firstname")
-      expect(response).to eq("|")
-    end
-
-    it "returns ' ' when passed a space seperated string" do
-      response = Document.get_delimiter("lastname firstname")
-      expect(response).to eq(" ")
-    end
-  end
-
   context "#first_line" do
     it "returns first line of file" do
       response = Document.new(pipe_file).first_line
       expect(response).to eq("Zachary | Albert | male | red | 19900521")
     end
   end
-
-
 end
