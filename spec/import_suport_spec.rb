@@ -30,15 +30,16 @@ describe "Import Support" do
   end
 
   context "#parse_record" do
-    it "creates array from record string" do
+    it "creates hash from record string" do
       record = "Triggs, Tyler, male, red, 19861216"
       response = dummy_class.new.parse_record(record)
-      expect(response.length).to eq(5)
-      expect(response[0]).to eq("Triggs")
-      expect(response[1]).to eq("Tyler")
-      expect(response[2]).to eq("male")
-      expect(response[3]).to eq("red")
-      expect(response[4]).to eq("19861216")
+      expect(response.length).to eq(6)
+      expect(response[:last_name]).to eq("Triggs")
+      expect(response[:first_name]).to eq("Tyler")
+      expect(response[:gender]).to eq("male")
+      expect(response[:favorite_color]).to eq("red")
+      expect(response[:dob]).to eq("19861216")
+      expect(response[:display_dob]).to eq("12/16/1986")
     end
   end
 end
