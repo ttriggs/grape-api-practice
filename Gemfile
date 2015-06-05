@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'redis'
+gem 'json'
 
 group :test do
   gem 'rspec'
