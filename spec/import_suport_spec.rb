@@ -20,4 +20,11 @@ describe "Import Support" do
       expect(response).to eq(" ")
     end
   end
+
+  context "#display_dob" do
+    it "reformat date from yyyymmdd to m/d/yyyy" do
+      response = dummy_class.new.display_dob("20110203")
+      expect(response).to eq("2/3/2011")
+    end
+  end
 end
