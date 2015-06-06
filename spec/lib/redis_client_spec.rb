@@ -74,7 +74,6 @@ describe "Redis Client sorting" do
 
       unsorted_result = dummy_class.new.records_from_db
       sorted_result   = dummy_class.new.sort_by_gender
-
       result_names    = sorted_result.map { |h| h["last_name"] }
       result_genders  = sorted_result.map { |h| h["gender"] }
 
