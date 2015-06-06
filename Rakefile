@@ -5,8 +5,8 @@ RSpec::Core::RakeTask.new :spec do |task|
   task.pattern = Dir['spec/**/*_spec.rb']
 end
 
-task :default => ['spec']
-require 'pry'
+task default: ['spec']
+
 desc 'Print compiled grape routes'
 task :routes do
   GrapeApp::API.routes.each do |route|
