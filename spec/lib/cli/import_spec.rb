@@ -20,7 +20,7 @@ describe "#import" do
   context "when supplied paths to files that do not exist" do
     it "raises an error" do
       arguments = ["import", invalid_file]
-      stdout, stderror = capture_output do
+      _, _ = capture_output do
         expect(runner.go(arguments)).to eq(1)
       end
     end
