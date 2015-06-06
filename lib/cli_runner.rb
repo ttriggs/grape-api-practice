@@ -8,9 +8,7 @@ class CliRunner
   include RedisClient
   include GLI::App
 
-
   def go(args)
-
     program_desc """
       Store and retrieve sorted records from a redis database.
       Imported text files should have five fields per record:
@@ -21,8 +19,8 @@ class CliRunner
     desc "Import records from text file(s) (arguments). \
           Accepts comma, pipe, or space delimited text files."
     command :import do |c|
-      c.action do |_global_options, _options, args|
-        import_files_to_db(args)
+      c.action do |_global_options, _options, cmdargs|
+        import_files_to_db(cmdargs)
       end
     end
 
@@ -71,4 +69,3 @@ class CliRunner
     end
   end
 end
-
