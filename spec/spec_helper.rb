@@ -1,7 +1,8 @@
-require 'rubygems'
-require 'rack/test'
 require 'coveralls'
 Coveralls.wear!
+
+require 'rubygems'
+require 'rack/test'
 
 ENV['RACK_ENV'] ||= 'test'
 
