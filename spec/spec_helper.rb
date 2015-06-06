@@ -2,11 +2,14 @@ require 'rubygems'
 
 ENV['RACK_ENV'] ||= 'test'
 
+
 require File.expand_path('../../config/environment', __FILE__)
 
 Dir[File.join(File.dirname(__FILE__), "support/**/*.rb")].each do |f|
   require f
 end
+
+require 'rack/test'
 
 RSpec.configure do |config|
   config.mock_with :rspec
