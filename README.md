@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/ttriggs/grape-api-practice.svg?branch=master)](https://travis-ci.org/ttriggs/grape-api-practice) [![Coverage Status](https://coveralls.io/repos/ttriggs/grape-api-practice/badge.svg)](https://coveralls.io/r/ttriggs/grape-api-practice)
 
 ##About
-Simple record storing and retrieval app with a command line utility (cli.rb) and Grape API to interface with the redis database.
+Simple record storing and retrieval app with a command line utility (cli.rb) and [Grape](https://github.com/intridea/grape) API to interface with the redis database.
 
-##CLI (made with gli gem):
+##CLI (made with the [gli](https://github.com/davetron5000/gli) gem):
 Note: Be sure to have ```redis-server``` running when using the CLI
 
 Run ```./cli.rb help``` to see accepted commands:
@@ -39,7 +39,7 @@ Lee, Julia, female, blue, 19840619
 Apple, Julia, female, blue, 19840610
 ```
 
-##Grape API:
+##[Grape](https://github.com/intridea/grape) API:
 The Grape API can be also be used to either return sorted records (GET endpoints) or to import a new record (POST /records)
 
 To run the grape API, run ```rackup``` (and have redis-server running)
