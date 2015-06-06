@@ -31,6 +31,6 @@ module RedisClient
   end
 
   def records_select_by(key, value)
-    records_from_db.select { |hash| hash[key] == value}
+    records_from_db.select { |hash| hash[key] == value }
   end
 end
