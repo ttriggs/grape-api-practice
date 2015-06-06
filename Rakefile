@@ -6,10 +6,11 @@ RSpec::Core::RakeTask.new :spec do |task|
 end
 
 task :default => ['spec']
-
+require 'pry'
 desc 'Print compiled grape routes'
 task :routes do
   GrapeApp::API.routes.each do |route|
-    puts route
+    options = route.instance_variable_get(:@options)
+    puts "method: #{options[:method]}\tpath: #{options[:path]}"
   end
 end
