@@ -25,7 +25,7 @@ module RedisClient
 
   def sort_by_gender
     females = sort_by_last_name(records_select_by("gender", "female"))
-    males = sort_by_last_name(records_select_by("gender", "male"))
+    males   = sort_by_last_name(records_select_by("gender", "male"))
     # reverse for last names in ascending order
     females.reverse + males.reverse
   end
