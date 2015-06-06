@@ -4,8 +4,32 @@
 Simple record storing and retrieval app with a command line utility (cli.rb) and Grape API to interface with the redis database.
 
 ##CLI (made with gli gem):
-Run ```./cli.rb help``` to see accepted commands.
-Be sure to have ```redis-server``` running to use the CLI
+Note: Be sure to have ```redis-server``` running when using the CLI
+
+Run ```./cli.rb help``` to see accepted commands:
+```
+NAME
+    cli.rb -
+      Store and retrieve sorted records from a redis database.
+      Imported text files should have five fields per record:
+      LastName | FirstName | Gender | FavoriteColor | DOB(YYYYMMDD)
+      delimited by pipes, commas, or white spaces.
+
+
+SYNOPSIS
+    cli.rb [global options] command [command options] [arguments...]
+
+GLOBAL OPTIONS
+    --help - Show this message
+
+COMMANDS
+    help              - Shows a list of commands or help for one command
+    import            - Import records from text file(s) (arguments). Accepts comma, pipe, or space
+                        delimited text files.
+    sort_by_dob       - Sort records by date of birth.
+    sort_by_gender    - Sort records by gender, then by last name.
+    sort_by_last_name - Sort records by last name.
+```
 
 Example importable text file:
 ```
