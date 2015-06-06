@@ -5,14 +5,16 @@ describe "Redis Client db import & retrieval" do
   before(:each) { redis.flushdb }
   let(:dummy_class) { Class.new { include RedisClient } }
   let(:import_one_record) { dummy_class.new.import_record(record_hash) }
-  let(:record_hash) {{
-                       last_name: "Triggs",
-                       first_name: "Tyler",
-                       gender: "male",
-                       favorite_color: "red",
-                       dob: "19861216",
-                       display_dob: "12/16/1986"
-                     }}
+  let(:record_hash) do
+    {
+      last_name: "Triggs",
+      first_name: "Tyler",
+      gender: "male",
+      favorite_color: "red",
+      dob: "19861216",
+      display_dob: "12/16/1986"
+    }
+  end
 
   context "#import_record" do
     it "imports a single record to redis db" do
@@ -73,14 +75,12 @@ describe "Redis Client sorting" do
       unsorted_result = dummy_class.new.records_from_db
       sorted_result   = dummy_class.new.sort_by_gender
 
-      unsorted_names  = unsorted_result.map { |h| h["last_name"] }
       result_names    = sorted_result.map { |h| h["last_name"] }
       result_genders  = sorted_result.map { |h| h["gender"] }
 
       expect(sorted_result).to_not eq(unsorted_result)
       expect(sorted_names).to eq(result_names)
-      expect(sorted_genders).to eq(sorted_genders)
+      expect(sorted_genders).to eq(result_genders)
     end
   end
 end
-
