@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ttriggs//grape-api-practice.svg?branch=master)](https://travis-ci.org/ttriggs//grape-api-practice) [![Coverage Status](https://coveralls.io/repos/ttriggs/grape-api-practice/badge.svg)](https://coveralls.io/r/ttriggs/grape-api-practice)
+[![Build Status](https://travis-ci.org/ttriggs/grape-api-practice.svg?branch=master)](https://travis-ci.org/ttriggs//grape-api-practice) [![Coverage Status](https://coveralls.io/repos/ttriggs/grape-api-practice/badge.svg)](https://coveralls.io/r/ttriggs/grape-api-practice)
 
 ##About
 Simple record storing and retrieval app with a command line utility (cli.rb) and Grape API to interface with the redis database.
