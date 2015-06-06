@@ -17,12 +17,25 @@ Apple, Julia, female, blue, 19840610
 
 ##Grape API:
 The Grape API can be also be used to either return sorted records (GET endpoints) or to import a new record (POST /records)
+
+To run the grape API, run ```rackup``` (and have redis-server running)
+default url is http://localhost:9292
+
 Run ```rake routes``` to view API endpoints:
 ```
   method: GET   path: /records/gender
   method: GET   path: /records/birthdate
   method: GET   path: /records/name
   method: POST  path: /records
+```
+
+To Post a new record using curl:
+```
+curl --data "{\"record\":\"Jones|Adam|male|red|19650115\"}" http://localhost:9292/records/ --header "Content-Type:application/json"
+```
+response:
+```
+[{"last_name":"Jones","first_name":"Adam","gender":"male","favorite_color":"red","display_dob":"1/15/1965"}]%
 ```
 
 ##Goals:
