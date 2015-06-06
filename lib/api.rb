@@ -4,7 +4,6 @@ require 'grape'
 
 module GrapeApp
   class API < Grape::API
-    version "0.0.1"
     format :json
     helpers RedisClient
     helpers ImportSupport
