@@ -4,10 +4,10 @@ describe GrapeApp::API do
   include Rack::Test::Methods
   let(:redis) { Redis.new }
   let(:comma_file) { Document.new('./spec/example_seeds/comma_delimiter.txt') }
-  let(:expected_header) {
-                          { "Content-Type"=>"application/json",
-                            "Content-Length"=>"440" }
-                         }
+  let(:expected_header) do
+    { "Content-Type" => "application/json",
+      "Content-Length" => "440" }
+  end
   before(:each) do
     redis.flushdb
     comma_file.import_records_to_db
