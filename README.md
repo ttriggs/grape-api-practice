@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/ttriggs/grape-api-practice.svg?branch=master)](https://travis-ci.org/ttriggs//grape-api-practice) [![Coverage Status](https://coveralls.io/repos/ttriggs/grape-api-practice/badge.svg)](https://coveralls.io/r/ttriggs/grape-api-practice)
+[![Build Status](https://travis-ci.org/ttriggs/grape-api-practice.svg?branch=master)](https://travis-ci.org/ttriggs/grape-api-practice) [![Coverage Status](https://coveralls.io/repos/ttriggs/grape-api-practice/badge.svg)](https://coveralls.io/r/ttriggs/grape-api-practice)
 
 ##About
 Simple record storing and retrieval app with a command line utility (cli.rb) and Grape API to interface with the redis database.
 
 ##CLI (made with gli gem):
-Run ```./cli.rb help``` to see accepted commands
+Run ```./cli.rb help``` to see accepted commands.
 Be sure to have ```redis-server``` running to use the CLI
 
 Example importable text file:
@@ -25,7 +25,7 @@ Run ```rake routes``` to view API endpoints:
   method: POST  path: /records
 ```
 
-##Goals
+##Goals:
 ###Step 1 - Build a system to parse and sort a set of records
 
 Create a command line app that takes as input a file with a set of records in one of three formats described below, and outputs (to the screen) the set of records sorted in one of three ways.
