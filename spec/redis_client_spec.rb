@@ -42,7 +42,7 @@ describe "Redis Client sorting" do
     comma_file.import_records_to_db
   end
 
-  context "#sort_by_db" do
+  context "#sort_by_dob" do
     it "orders all records by dob" do
       sorted_dobs = ["19830310", "19830319", "19840610", "19840619"]
       unsorted = dummy_class.new.records_from_db.map { |h| h["dob"] }
