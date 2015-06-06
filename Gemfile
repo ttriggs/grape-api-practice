@@ -4,6 +4,7 @@ gem 'redis'
 gem 'json'
 gem 'gli'
 gem 'grape'
+gem 'rake'
 
 group :test do
   gem 'rspec'
