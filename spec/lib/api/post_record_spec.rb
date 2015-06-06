@@ -5,10 +5,10 @@ describe GrapeApp::API do
 
   let(:redis) { Redis.new }
   before(:each) { redis.flushdb }
-  let(:pipe_record)  { {"record" => "Stevens|Steve|male|red|19801210"}.to_json }
-  let(:comma_record) { {"record" => "Stevens,Steve,male,red,19801210"}.to_json }
-  let(:space_record) { {"record" => "Stevens Steve male red 19801210"}.to_json }
-  let(:content_type) { {'CONTENT_TYPE' => 'application/json'} }
+  let(:pipe_record)  { { "record" => "Stevens|Steve|male|red|19801210" }.to_json }
+  let(:comma_record) { { "record" => "Stevens,Steve,male,red,19801210" }.to_json }
+  let(:space_record) { { "record" => "Stevens Steve male red 19801210" }.to_json }
+  let(:content_type) { { 'CONTENT_TYPE' => 'application/json' } }
 
   def app
     GrapeApp::API
