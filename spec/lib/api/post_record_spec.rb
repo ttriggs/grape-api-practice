@@ -22,7 +22,7 @@ describe GrapeApp::API do
       expect(last_response.status).to eq(201)
       expect(parsed_body.length).to eq(1)
       expect(last_response.body).to include("\"last_name\":\"Stevens\",\"first_name\":\"Steve")
-      expect(last_response.body).to include("display_dob\":\"12/10/1980\"")
+      expect(last_response.body).to include("dob\":\"12/10/1980\"")
     end
   end
 
@@ -34,7 +34,7 @@ describe GrapeApp::API do
       expect(last_response.status).to eq(201)
       expect(parsed_body.length).to eq(1)
       expect(last_response.body).to include("\"last_name\":\"Stevens\",\"first_name\":\"Steve")
-      expect(last_response.body).to include("display_dob\":\"12/10/1980\"")
+      expect(last_response.body).to include("dob\":\"12/10/1980\"")
     end
   end
 
@@ -46,7 +46,7 @@ describe GrapeApp::API do
       expect(last_response.status).to eq(201)
       expect(parsed_body.length).to eq(1)
       expect(last_response.body).to include("\"last_name\":\"Stevens\",\"first_name\":\"Steve")
-      expect(last_response.body).to include("display_dob\":\"12/10/1980\"")
+      expect(last_response.body).to include("dob\":\"12/10/1980\"")
     end
   end
 end

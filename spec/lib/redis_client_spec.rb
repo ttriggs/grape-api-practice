@@ -11,8 +11,7 @@ describe "Redis Client db import & retrieval" do
       first_name: "Tyler",
       gender: "male",
       favorite_color: "red",
-      dob: "19861216",
-      display_dob: "12/16/1986"
+      dob: "19861216"
     }
   end
 

@@ -6,7 +6,7 @@ describe GrapeApp::API do
   let(:comma_file) { Document.new('./spec/example_seeds/comma_delimiter.txt') }
   let(:expected_header) do
     { "Content-Type" => "application/json",
-      "Content-Length" => "440" }
+      "Content-Length" => "408" }
   end
   before(:each) do
     redis.flushdb
@@ -21,8 +21,8 @@ describe GrapeApp::API do
     it "returns json of records sorted by gender, then last name" do
       get "/records/gender"
 
-      first_record = "[{\"last_name\":\"Apple\",\"first_name\":\"Julia\",\"gender\":\"female\",\"favorite_color\":\"blue\",\"display_dob\":\"6/10/1984\"}"
-      last_record  = "{\"last_name\":\"Stevens\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"display_dob\":\"3/10/1983\"}]"
+      first_record = "[{\"last_name\":\"Apple\",\"first_name\":\"Julia\",\"gender\":\"female\",\"favorite_color\":\"blue\",\"dob\":\"6/10/1984\"}"
+      last_record  = "{\"last_name\":\"Stevens\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"dob\":\"3/10/1983\"}]"
 
       expect(last_response.status).to be(200)
       expect(last_response.body).to start_with(first_record)
@@ -35,8 +35,8 @@ describe GrapeApp::API do
     it "returns json of records sorted by birthdate" do
       get "/records/birthdate"
 
-      first_record = "[{\"last_name\":\"Stevens\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"display_dob\":\"3/10/1983\"}"
-      last_record  = "{\"last_name\":\"Lee\",\"first_name\":\"Julia\",\"gender\":\"female\",\"favorite_color\":\"blue\",\"display_dob\":\"6/19/1984\"}]"
+      first_record = "[{\"last_name\":\"Stevens\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"dob\":\"3/10/1983\"}"
+      last_record  = "{\"last_name\":\"Lee\",\"first_name\":\"Julia\",\"gender\":\"female\",\"favorite_color\":\"blue\",\"dob\":\"6/19/1984\"}]"
 
       expect(last_response.status).to be(200)
       expect(last_response.body).to start_with(first_record)
@@ -49,8 +49,8 @@ describe GrapeApp::API do
     it "returns json of records sorted by last name" do
       get "/records/name"
 
-      first_record = "[{\"last_name\":\"Stevens\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"display_dob\":\"3/10/1983\"}"
-      last_record  = "{\"last_name\":\"Albert\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"display_dob\":\"3/19/1983\"}]"
+      first_record = "[{\"last_name\":\"Stevens\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"dob\":\"3/10/1983\"}"
+      last_record  = "{\"last_name\":\"Albert\",\"first_name\":\"Steve\",\"gender\":\"male\",\"favorite_color\":\"red\",\"dob\":\"3/19/1983\"}]"
 
       expect(last_response.status).to be(200)
       expect(last_response.body).to start_with(first_record)
