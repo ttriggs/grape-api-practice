@@ -9,27 +9,27 @@ module GrapeApp
     helpers ImportSupport
 
     helpers do
-      def trim_for_display(records)
-        records.each { |r| r.delete("dob") }
+      def get_records(records)
+        dob_mutate_records(records)
       end
     end
 
     get "/records/gender" do
-      trim_for_display(sort_by_gender)
+      get_records(sort_by_gender)
     end
 
     get "/records/birthdate" do
-      trim_for_display(sort_by_dob)
+      get_records(sort_by_dob)
     end
 
     get "/records/name" do
-      trim_for_display(sort_by_last_name)
+      get_records(sort_by_last_name)
     end
 
     post "/records" do
       record = parse_record(params["record"])
       import_record(record)
-      trim_for_display(sort_by_dob)
+      get_records(sort_by_dob)
     end
   end
 end
