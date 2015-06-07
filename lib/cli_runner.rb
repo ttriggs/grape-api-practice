@@ -5,6 +5,7 @@ require 'pry'
 require 'gli'
 
 class CliRunner
+  include ImportSupport
   include RedisClient
   include GLI::App
 
@@ -64,8 +65,8 @@ class CliRunner
     puts "Showing all records sorted by #{sort_type}"
     puts "LastName\tFirstName\tGender\tFavoriteColor\tDOB"
     records.each do |record|
-      record.delete("dob")
-      puts record.values.join("\t")
+      record = dob_mutate_records([record])
+      puts record.first.values.join("\t")
     end
   end
 end
