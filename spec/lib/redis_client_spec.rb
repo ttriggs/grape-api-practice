@@ -47,7 +47,10 @@ describe "Redis Client sorting" do
 
   context "#sort_by_dob" do
     it "orders all records by dob" do
-      sorted_dobs = ["19830310", "19830319", "19840610", "19840619"]
+      sorted_dobs = ["19830310",
+                     "19830319",
+                     "19840610",
+                     "19840619"]
       unsorted = dummy_class.new.records_from_db.map { |h| h["dob"] }
       sorted   = dummy_class.new.sort_by_dob.map { |h| h["dob"] }
 
