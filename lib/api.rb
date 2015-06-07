@@ -9,28 +9,27 @@ module GrapeApp
     helpers ImportSupport
 
     helpers do
-      def prepare_json(records)
-        records.map { |r| r.delete("dob") }
-        records
+      def trim_for_display(records)
+        records.each { |r| r.delete("dob") }
       end
     end
 
     get "/records/gender" do
-      prepare_json(sort_by_gender)
+      trim_for_display(sort_by_gender)
     end
 
     get "/records/birthdate" do
-      prepare_json(sort_by_dob)
+      trim_for_display(sort_by_dob)
     end
 
     get "/records/name" do
-      prepare_json(sort_by_last_name)
+      trim_for_display(sort_by_last_name)
     end
 
     post "/records" do
       record = parse_record(params["record"])
       import_record(record)
-      prepare_json(sort_by_dob)
+      trim_for_display(sort_by_dob)
     end
   end
 end
