@@ -59,7 +59,7 @@ curl --data "{\"record\":\"Jones|Adam|male|red|19650115\"}" http://localhost:929
 ```
 response:
 ```
-[{"last_name":"Jones","first_name":"Adam","gender":"male","favorite_color":"red","display_dob":"1/15/1965"}]%
+[{"last_name":"Jones","first_name":"Adam","gender":"male","favorite_color":"red","dob":"1/15/1965"}]%
 ```
 
 ##Goals:
